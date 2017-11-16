@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Knokout wow!</title>
+  <meta name="description" content="Knokout wow!">
+  <meta name="author" content="me">
+
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+  
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<h2>Your seat reservations</h2>
+
+	<h2>Your seat reservations (<span data-bind="text: seats().length"></span>)</h2>
+	<table>
+		<thead><tr>
+			<th>Passenger name</th>
+			<th>Cool name</th>
+			<th>Meal</th><th>Surcharge</th><th></th>
+		</tr></thead>
+		<!-- Todo: Generate table body -->
+		<tbody data-bind="foreach: seats">
+		<tr>
+			<td><input data-bind="value: name" /></td>
+			<td data-bind="text: name"></td>
+			<td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+			<td data-bind="text: formattedPrice"></td>
+			<td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+		</tr>    
+	</tbody>
+	</table>
+	<button data-bind="click: addSeat">Reserve another seat</button>
+	<button data-bind="click: addSeat, enable: seats().length < 5">Reserve another seat</button>
+	<h3 data-bind="visible: totalSurcharge() > 0">
+		Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+	</h3>
+
+	<script type='text/javascript' src='scripts/custom.js'></script>
+</body>
+</html>

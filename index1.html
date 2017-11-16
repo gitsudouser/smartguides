@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="Knokout wow!">
+  <meta name="author" content="me">
+
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+  
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<p>First name: <strong data-bind="text: firstName"></strong></p>
+	<p>Last name: <strong data-bind="text: lastName"></strong></p>
+	<p>Full name: <strong data-bind="text: fullName"></strong></p>
+	
+	<p>First name: <input data-bind="value: firstName" /></p>
+	<p>Last name: <input data-bind="value: lastName" /></p>
+	
+	<button data-bind="click: capitalizeLastName">Go caps</button>
+	
+	<script type='text/javascript' src='scripts/custom.js'></script>
+	<script>
+
+	</script>
+</body>
+</html>
